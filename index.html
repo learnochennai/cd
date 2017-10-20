@@ -74,7 +74,7 @@
 			var camera, scene, renderer;
 			var controls;
 			var stats = new Stats();
-			stats.showPanel(1);
+			stats.showPanel(0);
 			document.body.appendChild( stats.dom );
 
 
@@ -222,25 +222,32 @@
 
 			}
 
-			function animate() {
-				stats.end();
+			
 
+			function animate() {
+				
+				stats.end();
 				requestAnimationFrame( animate );
 
 				TWEEN.update();
 
 				controls.update();
+
 				
 
 			}
-			stats.end();
+			
 
 			function render() {
 
 				renderer.render( scene, camera );
 
 			}
+			javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
+
+
 
 		</script>
+
 	</body>
 </html>
